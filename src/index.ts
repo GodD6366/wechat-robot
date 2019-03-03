@@ -15,14 +15,13 @@ bot.on('scan', (url: string, code: string) => {
 })
     .on('login', async (user: any) => {
         console.log(`User ${user} logined`);
-        // mySchedule(bot, users);
-
-        const userGodd = await users.find('GodD');
-        Promise.all([await getOne(), await getWeather()]).then(
-            ([one, { weatherTips }]) => {
-                userGodd.say(`老婆大人,该起床咯!今天,${weatherTips}`);
-            }
-        );
+        mySchedule(bot, users);
+        // const userGodd = await users.find('GodD');
+        // Promise.all([await getOne(), await getWeather()]).then(
+        //     ([one, { weatherTips }]) => {
+        //         userGodd.say(`老婆大人,该起床咯!今天,${weatherTips}`);
+        //     }
+        // );
     })
     .on('message', async (message: any) => {
         let from = message.from().name();

@@ -22,7 +22,7 @@ const scheduleInit = async (bot: any, users: Users) => {
 
     schedule.scheduleJob(afternoon, async function() {
         let { weatherTips } = await getWeather();
-        user133.say(`下班了没啊?`);
+        user133.say(`老婆该下班咯,晚上准备吃什么啊?`);
     });
 };
 

@@ -27,8 +27,8 @@ const talk = (text: string) => {
                 reject(new Error(error));
             } else {
                 try {
-                    console.log('\n' + body + '\n');
-                    let text = body.results[0].values.text;
+                    let { results } = JSON.parse(body);
+                    let text = results[0].values.text;
                     resolve(text);
                 } catch (error) {
                     reject(error);
@@ -37,5 +37,5 @@ const talk = (text: string) => {
         });
     });
 };
-
+talk('66');
 export default talk;

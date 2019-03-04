@@ -25,9 +25,15 @@ const talk = (text: string) => {
         request(options, function(error: any, response: any, body: any) {
             if (error) {
                 reject(new Error(error));
+            } else {
+                try {
+                    console.log('\n' + body + '\n');
+                    let text = body.results[0].values.text;
+                    resolve(text);
+                } catch (error) {
+                    reject(error);
+                }
             }
-            let text = body.results[0].values.text;
-            resolve(text);
         });
     });
 };

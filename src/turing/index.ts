@@ -37,5 +37,5 @@ const talk = (text: string) => {
         });
     });
 };
-talk('66');
+
 export default talk;
